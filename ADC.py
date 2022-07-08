@@ -12,6 +12,7 @@ def read_ADC_Val():
         
         print(val)
         print(val2)
+        print(val)
         
         time.sleep(1)
         
