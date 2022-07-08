@@ -1,2 +1,6 @@
-Schnuppi.s#*
-Schnuppi.b#*
+*.s#?
+*.b#?
+*.l#?
+*.b$?
+*.s$?
+*.l$?
