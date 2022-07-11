@@ -2,6 +2,8 @@ from machine import ADC
 from machine import Pin
 import time
 
+
+
 def read_ADC_Val():
     while True:
         pin27 = Pin(27, Pin.IN)
