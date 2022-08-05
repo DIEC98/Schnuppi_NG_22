@@ -5975,6 +5975,164 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="supply1">
+<description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
+ GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
+ Please keep in mind, that these devices are necessary for the
+ automatic wiring of the supply signals.&lt;p&gt;
+ The pin name defined in the symbol is identical to the net which is to be wired automatically.&lt;p&gt;
+ In this library the device names are the same as the pin names of the symbols, therefore the correct signal names appear next to the supply symbols in the schematic.&lt;p&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="GND">
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="GND" prefix="GND">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="switch">
+<description>&lt;b&gt;Switches&lt;/b&gt;&lt;p&gt;
+Marquardt, Siemens, C&amp;K, ITT, and others&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TL3XPO">
+<description>&lt;b&gt;TINY SWITCH&lt;/b&gt;&lt;p&gt;
+Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da-01-de-Subminiaturschalter_TL_36YO.pdf</description>
+<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="-2.54" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="-2.54" x2="-5.08" y2="-2.54" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="-2.54" x2="-5.08" y2="2.54" width="0.2032" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="0" y2="1.27" width="0.2032" layer="51"/>
+<wire x1="-3.175" y1="-1.27" x2="0" y2="-1.27" width="0.2032" layer="51"/>
+<wire x1="0" y1="1.27" x2="0" y2="-1.27" width="0.2032" layer="51" curve="-180"/>
+<wire x1="-1.375" y1="1.275" x2="-1.35" y2="-1.3" width="0.2032" layer="51" curve="-273.242292"/>
+<circle x="-3.175" y="0" radius="1.27" width="0.2032" layer="51"/>
+<pad name="1" x="-2.54" y="0" drill="1.1" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="2" x="0" y="0" drill="1.1" diameter="1.4224" shape="long" rot="R90"/>
+<pad name="3" x="2.54" y="0" drill="1.1" diameter="1.4224" shape="long" rot="R90"/>
+<text x="-5.08" y="3.175" size="1.778" layer="25">&gt;NAME</text>
+<text x="-5.08" y="-5.08" size="1.778" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="U">
+<wire x1="0" y1="-3.175" x2="0" y2="-1.905" width="0.254" layer="94"/>
+<wire x1="0" y1="-1.905" x2="-1.905" y2="3.175" width="0.254" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="3.175" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-1.27" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-2.54" y2="3.175" width="0.254" layer="94"/>
+<text x="5.08" y="-2.54" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<text x="7.62" y="-2.54" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
+<pin name="P" x="0" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
+<pin name="S" x="2.54" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+<pin name="O" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TL36PO" prefix="S">
+<description>&lt;b&gt;TINY SWITCH&lt;/b&gt; ON - ON&lt;p&gt;
+Source: http://www2.produktinfo.conrad.com/datenblaetter/700000-724999/705152-da-01-de-Subminiaturschalter_TL_36YO.pdf</description>
+<gates>
+<gate name="BEF1" symbol="U" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TL3XPO">
+<connects>
+<connect gate="BEF1" pin="O" pad="1"/>
+<connect gate="BEF1" pin="P" pad="2"/>
+<connect gate="BEF1" pin="S" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="con-molex">
+<description>&lt;b&gt;Molex Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="22-23-2041">
+<description>.100" (2.54mm) Center Header - 4 Pin</description>
+<wire x1="-5.08" y1="3.175" x2="5.08" y2="3.175" width="0.254" layer="21"/>
+<wire x1="5.08" y1="3.175" x2="5.08" y2="1.27" width="0.254" layer="21"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="5.08" y1="-3.175" x2="-5.08" y2="-3.175" width="0.254" layer="21"/>
+<wire x1="-5.08" y1="-3.175" x2="-5.08" y2="1.27" width="0.254" layer="21"/>
+<wire x1="-5.08" y1="1.27" x2="-5.08" y2="3.175" width="0.254" layer="21"/>
+<wire x1="-5.08" y1="1.27" x2="5.08" y2="1.27" width="0.254" layer="21"/>
+<pad name="1" x="-3.81" y="0" drill="1" shape="long" rot="R90"/>
+<pad name="2" x="-1.27" y="0" drill="1" shape="long" rot="R90"/>
+<pad name="3" x="1.27" y="0" drill="1" shape="long" rot="R90"/>
+<pad name="4" x="3.81" y="0" drill="1" shape="long" rot="R90"/>
+<text x="-5.08" y="3.81" size="1.016" layer="25" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="-5.08" size="1.016" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MV">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<text x="-0.762" y="1.397" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="M">
+<wire x1="1.27" y1="0" x2="0" y2="0" width="0.6096" layer="94"/>
+<text x="2.54" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<pin name="S" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="22-23-2041" prefix="X">
+<description>.100" (2.54mm) Center Header - 4 Pin</description>
+<gates>
+<gate name="-1" symbol="MV" x="0" y="2.54" addlevel="always" swaplevel="1"/>
+<gate name="-2" symbol="M" x="0" y="0" addlevel="always" swaplevel="1"/>
+<gate name="-3" symbol="M" x="0" y="-2.54" addlevel="always" swaplevel="1"/>
+<gate name="-4" symbol="M" x="0" y="-5.08" addlevel="always" swaplevel="1"/>
+</gates>
+<devices>
+<device name="" package="22-23-2041">
+<connects>
+<connect gate="-1" pin="S" pad="1"/>
+<connect gate="-2" pin="S" pad="2"/>
+<connect gate="-3" pin="S" pad="3"/>
+<connect gate="-4" pin="S" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="MOLEX" constant="no"/>
+<attribute name="MPN" value="22-23-2041" constant="no"/>
+<attribute name="OC_FARNELL" value="1462920" constant="no"/>
+<attribute name="OC_NEWARK" value="38C0355" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5996,18 +6154,40 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R4" library="rcl" deviceset="R-TRIMM" device="64Y"/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="V234/12"/>
 <part name="SUPPLY1" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
-<part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="GND1" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="GND2" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="PAD1" library="wirepad" deviceset="SMD5" device=""/>
 <part name="PAD2" library="wirepad" deviceset="SMD5" device=""/>
 <part name="PAD3" library="wirepad" deviceset="SMD5" device=""/>
-<part name="D2" library="SparkFun-LED" deviceset="LED" device="5MM" value="Power LED"/>
+<part name="P2" library="SparkFun-LED" deviceset="LED" device="5MM" value="Power LED"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="V234/12"/>
 <part name="GND3" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="V234/12"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="V234/12"/>
+<part name="GND6" library="supply1" deviceset="GND" device=""/>
+<part name="S6" library="switch" deviceset="TL36PO" device=""/>
+<part name="S8" library="switch" deviceset="TL36PO" device=""/>
+<part name="S9" library="switch" deviceset="TL36PO" device=""/>
+<part name="S7" library="switch" deviceset="TL36PO" device=""/>
+<part name="P1" library="SparkFun-LED" deviceset="LED" device="5MM" value="Power LED"/>
+<part name="P3" library="SparkFun-LED" deviceset="LED" device="5MM" value="Power LED"/>
+<part name="P4" library="SparkFun-LED" deviceset="LED" device="5MM" value="Power LED"/>
+<part name="P5" library="SparkFun-LED" deviceset="LED" device="5MM" value="Power LED"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="V234/12"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="V234/12"/>
+<part name="R9" library="rcl" deviceset="R-EU_" device="V234/12"/>
+<part name="R10" library="rcl" deviceset="R-EU_" device="V234/12"/>
+<part name="SUPPLY2" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
+<part name="SUPPLY4" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
+<part name="SUPPLY5" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
+<part name="SUPPLY6" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
+<part name="GND4" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND5" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND7" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="GND8" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
+<part name="X1" library="con-molex" deviceset="22-23-2041" device=""/>
+<part name="GND9" library="SparkFun-PowerSymbols" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6025,11 +6205,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="VALUE" x="86.36" y="17.4625" size="1.778" layer="95" font="vector" align="top-left"/>
 </instance>
 <instance part="R1" gate="G$1" x="76.2" y="25.4"/>
-<instance part="R4" gate="G$1" x="78.74" y="58.42" rot="MR0"/>
-<instance part="R5" gate="G$1" x="78.74" y="71.12" rot="R90"/>
-<instance part="SUPPLY1" gate="G$1" x="78.74" y="78.74"/>
-<instance part="SUPPLY2" gate="G$1" x="-53.34" y="33.02" rot="R90"/>
-<instance part="GND1" gate="1" x="78.74" y="48.26"/>
+<instance part="R4" gate="G$1" x="76.2" y="91.44" rot="MR0"/>
+<instance part="R5" gate="G$1" x="76.2" y="101.6" rot="R90"/>
+<instance part="SUPPLY1" gate="G$1" x="76.2" y="109.22"/>
+<instance part="GND1" gate="1" x="76.2" y="83.82"/>
 <instance part="GND2" gate="1" x="7.62" y="0"/>
 <instance part="SUPPLY3" gate="G$1" x="121.92" y="22.86" rot="R270"/>
 <instance part="PAD1" gate="1" x="71.12" y="27.94" smashed="yes" rot="R270">
@@ -6044,13 +6223,47 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="72.263" y="15.9258" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="74.422" y="16.637" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="D2" gate="D1" x="76.2" y="33.02" smashed="yes" rot="R90">
+<instance part="P2" gate="D1" x="76.2" y="33.02" smashed="yes" rot="R90">
 <attribute name="VALUE" x="83.312" y="34.925" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
 </instance>
 <instance part="R2" gate="G$1" x="88.9" y="33.02"/>
 <instance part="GND3" gate="1" x="99.06" y="30.48"/>
 <instance part="R3" gate="G$1" x="76.2" y="22.86"/>
 <instance part="R6" gate="G$1" x="76.2" y="20.32"/>
+<instance part="GND6" gate="1" x="-53.34" y="30.48"/>
+<instance part="S6" gate="BEF1" x="124.46" y="78.74" rot="R270"/>
+<instance part="S8" gate="BEF1" x="124.46" y="53.34" rot="R270"/>
+<instance part="S9" gate="BEF1" x="124.46" y="66.04" rot="R270"/>
+<instance part="S7" gate="BEF1" x="124.46" y="43.18" rot="R270"/>
+<instance part="P1" gate="D1" x="142.24" y="81.28" smashed="yes" rot="R90">
+<attribute name="VALUE" x="149.352" y="83.185" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+</instance>
+<instance part="P3" gate="D1" x="142.24" y="68.58" smashed="yes" rot="R90">
+<attribute name="VALUE" x="149.352" y="70.485" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+</instance>
+<instance part="P4" gate="D1" x="142.24" y="55.88" smashed="yes" rot="R90">
+<attribute name="VALUE" x="149.352" y="57.785" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+</instance>
+<instance part="P5" gate="D1" x="142.24" y="45.72" smashed="yes" rot="R90">
+<attribute name="VALUE" x="149.352" y="47.625" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+</instance>
+<instance part="R7" gate="G$1" x="134.62" y="81.28"/>
+<instance part="R8" gate="G$1" x="134.62" y="68.58"/>
+<instance part="R9" gate="G$1" x="134.62" y="55.88"/>
+<instance part="R10" gate="G$1" x="134.62" y="45.72"/>
+<instance part="SUPPLY2" gate="G$1" x="147.32" y="45.72" rot="R270"/>
+<instance part="SUPPLY4" gate="G$1" x="147.32" y="55.88" rot="R270"/>
+<instance part="SUPPLY5" gate="G$1" x="147.32" y="68.58" rot="R270"/>
+<instance part="SUPPLY6" gate="G$1" x="147.32" y="81.28" rot="R270"/>
+<instance part="GND4" gate="1" x="129.54" y="73.66"/>
+<instance part="GND5" gate="1" x="129.54" y="60.96"/>
+<instance part="GND7" gate="1" x="129.54" y="48.26"/>
+<instance part="GND8" gate="1" x="129.54" y="38.1"/>
+<instance part="X1" gate="-1" x="-40.64" y="66.04" rot="R180"/>
+<instance part="X1" gate="-2" x="-40.64" y="68.58" rot="R180"/>
+<instance part="X1" gate="-3" x="-40.64" y="71.12" rot="R180"/>
+<instance part="X1" gate="-4" x="-40.64" y="73.66" rot="R180"/>
+<instance part="GND9" gate="1" x="-17.78" y="76.2"/>
 </instances>
 <busses>
 </busses>
@@ -6107,6 +6320,53 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </net>
 <net name="VCC" class="0">
 <segment>
+<pinref part="IC1" gate="G$1" pin="3V3"/>
+<wire x1="12.7" y1="7.62" x2="7.62" y2="7.62" width="0.1524" layer="91"/>
+<label x="7.62" y="7.62" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
+<wire x1="76.2" y1="109.22" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
+<pinref part="RGBLED" gate="G$1" pin="A"/>
+<wire x1="121.92" y1="22.86" x2="106.68" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P5" gate="D1" pin="C"/>
+<pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="P4" gate="D1" pin="C"/>
+<pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="P3" gate="D1" pin="C"/>
+<pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="P1" gate="D1" pin="C"/>
+<pinref part="SUPPLY6" gate="G$1" pin="VCC"/>
+</segment>
+</net>
+<net name="GND" class="0">
+<segment>
+<pinref part="R4" gate="G$1" pin="A"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="GND"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="12.7" y1="2.54" x2="7.62" y2="2.54" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<wire x1="93.98" y1="33.02" x2="99.06" y2="33.02" width="0.1524" layer="91"/>
+</segment>
+<segment>
 <pinref part="S1" gate="G$1" pin="1"/>
 <pinref part="S1" gate="G$1" pin="2"/>
 <wire x1="-43.18" y1="43.18" x2="-43.18" y2="40.64" width="0.1524" layer="91"/>
@@ -6137,39 +6397,26 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="-33.02" y="38.1"/>
 <junction x="-43.18" y="43.18"/>
 <wire x1="-53.34" y1="33.02" x2="-48.26" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+<junction x="-48.26" y="38.1"/>
+<junction x="-48.26" y="33.02"/>
+<junction x="-48.26" y="27.94"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="3V3"/>
-<wire x1="12.7" y1="7.62" x2="7.62" y2="7.62" width="0.1524" layer="91"/>
-<label x="7.62" y="7.62" size="1.778" layer="95"/>
+<pinref part="S6" gate="BEF1" pin="S"/>
+<pinref part="GND4" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="R5" gate="G$1" pin="2"/>
-<pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
-<wire x1="78.74" y1="78.74" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="S9" gate="BEF1" pin="S"/>
+<pinref part="GND5" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
-<pinref part="RGBLED" gate="G$1" pin="A"/>
-<wire x1="121.92" y1="22.86" x2="106.68" y2="22.86" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="GND" class="0">
-<segment>
-<pinref part="R4" gate="G$1" pin="A"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="78.74" y1="53.34" x2="78.74" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="S8" gate="BEF1" pin="S"/>
+<pinref part="GND7" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="GND"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="12.7" y1="2.54" x2="7.62" y2="2.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R2" gate="G$1" pin="2"/>
-<pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="93.98" y1="33.02" x2="99.06" y2="33.02" width="0.1524" layer="91"/>
+<pinref part="S7" gate="BEF1" pin="S"/>
+<pinref part="GND8" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -6196,26 +6443,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="R4" gate="G$1" pin="E"/>
 <pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="78.74" y1="63.5" x2="78.74" y2="66.04" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="R4" gate="G$1" pin="S"/>
-<pinref part="IC1" gate="G$1" pin="36"/>
-<wire x1="73.66" y1="58.42" x2="66.04" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="D2" gate="D1" pin="A"/>
+<pinref part="P2" gate="D1" pin="A"/>
 <pinref part="IC1" gate="G$1" pin="33"/>
 <wire x1="66.04" y1="33.02" x2="73.66" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
-<pinref part="D2" gate="D1" pin="C"/>
+<pinref part="P2" gate="D1" pin="C"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="81.28" y1="33.02" x2="83.82" y2="33.02" width="0.1524" layer="91"/>
 </segment>
@@ -6250,6 +6489,140 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="RGBLED" gate="G$1" pin="GRN"/>
 <wire x1="81.28" y1="20.32" x2="83.82" y2="20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="X1" gate="-1" pin="S"/>
+<wire x1="-38.1" y1="66.04" x2="-17.78" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="66.04" x2="-17.78" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="22"/>
+<wire x1="12.7" y1="48.26" x2="-17.78" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="48.26" x2="-17.78" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="36"/>
+<wire x1="66.04" y1="58.42" x2="66.04" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="S"/>
+<wire x1="66.04" y1="91.44" x2="71.12" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="S6" gate="BEF1" pin="P"/>
+<wire x1="119.38" y1="78.74" x2="104.14" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="37"/>
+<wire x1="104.14" y1="78.74" x2="101.6" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="53.34" x2="73.66" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="53.34" x2="73.66" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="78.74" x2="101.6" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$22" class="0">
+<segment>
+<pinref part="S9" gate="BEF1" pin="P"/>
+<pinref part="IC1" gate="G$1" pin="38"/>
+<wire x1="66.04" y1="48.26" x2="78.74" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="48.26" x2="78.74" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="66.04" x2="119.38" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="39"/>
+<wire x1="66.04" y1="43.18" x2="83.82" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="43.18" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="S8" gate="BEF1" pin="P"/>
+<wire x1="83.82" y1="53.34" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="32"/>
+<wire x1="66.04" y1="38.1" x2="91.44" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="38.1" x2="91.44" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="S7" gate="BEF1" pin="P"/>
+<wire x1="91.44" y1="43.18" x2="119.38" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$23" class="0">
+<segment>
+<pinref part="S7" gate="BEF1" pin="O"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$24" class="0">
+<segment>
+<pinref part="S8" gate="BEF1" pin="O"/>
+<pinref part="R9" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$25" class="0">
+<segment>
+<pinref part="S9" gate="BEF1" pin="O"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$26" class="0">
+<segment>
+<pinref part="S6" gate="BEF1" pin="O"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+</segment>
+</net>
+<net name="N$27" class="0">
+<segment>
+<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="P1" gate="D1" pin="A"/>
+</segment>
+</net>
+<net name="N$28" class="0">
+<segment>
+<pinref part="R8" gate="G$1" pin="2"/>
+<pinref part="P3" gate="D1" pin="A"/>
+</segment>
+</net>
+<net name="N$29" class="0">
+<segment>
+<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="P4" gate="D1" pin="A"/>
+</segment>
+</net>
+<net name="N$30" class="0">
+<segment>
+<pinref part="R10" gate="G$1" pin="2"/>
+<pinref part="P5" gate="D1" pin="A"/>
+</segment>
+</net>
+<net name="N$32" class="0">
+<segment>
+<wire x1="12.7" y1="53.34" x2="-12.7" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="53.34" x2="-12.7" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-2" pin="S"/>
+<wire x1="-12.7" y1="68.58" x2="-38.1" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="21"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="5V"/>
+<wire x1="12.7" y1="12.7" x2="-60.96" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="12.7" x2="-60.96" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-60.96" y1="81.28" x2="-30.48" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-30.48" y1="81.28" x2="-30.48" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="X1" gate="-4" pin="S"/>
+<wire x1="-30.48" y1="73.66" x2="-38.1" y2="73.66" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$31" class="0">
+<segment>
+<pinref part="X1" gate="-3" pin="S"/>
+<wire x1="-38.1" y1="71.12" x2="-27.94" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="71.12" x2="-27.94" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="81.28" x2="-17.78" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-17.78" y1="81.28" x2="-17.78" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="GND9" gate="1" pin="GND"/>
 </segment>
 </net>
 </nets>
